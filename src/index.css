@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-burgundy: #281819;
+  --color-ink: #140a0b;
+  --color-wine: #3a2224;
+  --color-wine-lift: #4a2d30;
+  --color-cream: #f4e8dc;
+  --color-cream-soft: #e8d5c4;
+  --color-gold: #c9a882;
+  --color-gold-bright: #e0c4a0;
+  --color-dust: #c4a99a;
+  --color-spice: #c45c4a;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #281819;
+  color: #f4e8dc;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #c9a882;
+  color: #281819;
+}
+
+:focus-visible {
+  outline: 1px solid #c9a882;
+  outline-offset: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #140a0b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9a88255;
+  border-radius: 999px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-x 42s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pulse-line {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.scroll-line {
+  animation: pulse-line 2.4s ease-in-out infinite;
+  transform-origin: top;
+}
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1.12) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.02) translate3d(0, -1.5%, 0);
+  }
+}
+
+.kenburns {
+  animation: kenburns 18s ease-out forwards;
+}
