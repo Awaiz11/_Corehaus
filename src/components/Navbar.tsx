@@ -60,7 +60,9 @@ export default function Navbar() {
 
           <div className="hidden items-center justify-end gap-6 lg:flex">
             <a
-              href="/login-portal"
+              href="https://momence.com/sign-in?hostId=47062"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[11px] tracking-[0.28em] uppercase text-cream/80 transition-colors hover:text-gold"
             >
               Log In
@@ -108,10 +110,12 @@ export default function Navbar() {
                 variants={{ show: { transition: { staggerChildren: 0.08 } } }}
                 className="flex flex-col gap-2"
               >
-                {[...links, { label: "Log In", href: "/login-portal" }].map((link) => (
+                {[...links, { label: "Log In", href: "https://momence.com/sign-in?hostId=47062", target: "_blank", rel: "noopener noreferrer" }].map((link: any) => (
                   <motion.a
                     key={link.href}
                     href={link.href}
+                    target={link.target}
+                    rel={link.rel}
                     onClick={() => setOpen(false)}
                     variants={{
                       hidden: { opacity: 0, y: 24 },

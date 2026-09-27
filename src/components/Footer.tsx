@@ -42,7 +42,7 @@ export default function Footer() {
             <a href="#packages" className="hover:text-gold">
               Packages
             </a>
-            <a href="/login-portal" className="hover:text-gold">
+            <a href="https://momence.com/sign-in?hostId=47062" target="_blank" rel="noopener noreferrer" className="hover:text-gold">
               Log In
             </a>
             <a href={studio.instagram} target="_blank" rel="noreferrer" className="hover:text-gold">
